@@ -2,18 +2,16 @@
 #include <windows.h>
 #include <string>
 
-using namespace std;
-
 int main()
 {
-    string input;
+    std::string input;
     HW_PROFILE_INFO hwProfileInfo;
 
     GetCurrentHwProfile(&hwProfileInfo);
 
-    cout << "Made by: Culminated\n" <<"Docked: " << hwProfileInfo.szHwProfileName << "\n" << "HWID: " << hwProfileInfo.szHwProfileGuid << "\n";
-    cout << "\nDo you want to copy your HWID?\n" << "\nY/N\n";
-    cin >> input;
+    std::cout << "Made by: Culminated\n" <<"Docked: " << hwProfileInfo.szHwProfileName << "\n" << "HWID: " << hwProfileInfo.szHwProfileGuid << "\n";
+    std::cout << "\nDo you want to copy your HWID?\n" << "\nY/N\n";
+    std::cin >> input;
 
     const char* output = hwProfileInfo.szHwProfileGuid;
     const size_t len = strlen(output) + 1;
